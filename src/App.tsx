@@ -1,9 +1,7 @@
-function App() {
-  return (
-    <div>
-      <h1>Hello, world!</h1>
-    </div>
-  )
+import Timer from "./Timer";
+
+function App(): JSX.Element {
+  return <Timer />;
 }
 
-export default App
+export default App;
