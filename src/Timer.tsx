@@ -1,6 +1,7 @@
 import dayjs from "dayjs";
 import duration from "dayjs/plugin/duration";
 import { useState } from "react";
+import { Helmet } from "react-helmet";
 import { useBoolean, useInterval } from "react-use";
 
 dayjs.extend(duration);
@@ -46,11 +47,16 @@ function Timer(props: TimerProps): JSX.Element {
     isRunning ? delay : null
   );
 
+  const output = dayjs
+    .duration(dayjs(endAt).diff(dayjs(currentTime)))
+    .format("mm:ss");
+
   return (
     <>
-      <output>
-        {dayjs.duration(dayjs(endAt).diff(dayjs(currentTime))).format("mm:ss")}
-      </output>
+      <Helmet>
+        <title>{output}</title>
+      </Helmet>
+      <output>{output}</output>
       {isRunning ? (
         <button onClick={onStopClick}>Stop</button>
       ) : (
