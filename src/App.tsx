@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { z } from 'zod';
+import './App.css';
 import Timer from './Timer';
 import dayjs from './dayjs';
 
