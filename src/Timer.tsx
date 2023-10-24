@@ -1,10 +1,7 @@
-import dayjs from "dayjs";
-import duration from "dayjs/plugin/duration";
 import { useState } from "react";
 import { Helmet } from "react-helmet";
 import { useBoolean, useInterval } from "react-use";
-
-dayjs.extend(duration);
+import dayjs from "./dayjs";
 
 interface TimerProps {
   delay?: number;
@@ -49,7 +46,7 @@ function Timer(props: TimerProps): JSX.Element {
 
   const output = dayjs
     .duration(dayjs(endAt).diff(dayjs(currentTime)))
-    .format("mm:ss");
+    .format("HH:mm:ss");
 
   return (
     <>
