@@ -1,7 +1,7 @@
-import { useState } from "react";
-import { Helmet } from "react-helmet";
-import { useBoolean, useInterval } from "react-use";
-import dayjs from "./dayjs";
+import { useState } from 'react';
+import { Helmet } from 'react-helmet';
+import { useBoolean, useInterval } from 'react-use';
+import dayjs from './dayjs';
 
 interface TimerProps {
   delay?: number;
@@ -9,7 +9,7 @@ interface TimerProps {
 }
 
 function Timer(props: TimerProps): JSX.Element {
-  const { delay = 1000, isoDuration = "PT25M" } = props;
+  const { delay = 1000, isoDuration = 'PT25M' } = props;
 
   const now = dayjs();
   const duration = dayjs.duration(isoDuration);
@@ -41,12 +41,10 @@ function Timer(props: TimerProps): JSX.Element {
 
       setCurrentTime(now);
     },
-    isRunning ? delay : null
+    isRunning ? delay : null,
   );
 
-  const output = dayjs
-    .duration(dayjs(endAt).diff(dayjs(currentTime)))
-    .format("HH:mm:ss");
+  const output = dayjs.duration(dayjs(endAt).diff(dayjs(currentTime))).format('HH:mm:ss');
 
   return (
     <>
