@@ -1,0 +1,53 @@
+:root {
+  --color-base: #fff;
+  --color-primary: tomato;
+  --font-family: 'Poppins', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-primary);
+  color: var(--color-base);
+  display: grid;
+  font-family: var(--font-family);
+  line-height: 1.5;
+  margin: 0;
+  min-block-size: 100vh;
+  place-items: center;
+}
+
+button {
+  background: none;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+}
+
+.timer {
+  text-align: center;
+}
+
+.timer__output {
+  --font-size-min: 4rem;
+  --font-size-max: 12rem;
+
+  display: block;
+  font-feature-settings: 'tnum';
+  font-size: clamp(var(--font-size-min), 20vw, var(--font-size-max));
+  font-variant-numeric: tabular-nums;
+  line-height: 1.2;
+  margin-bottom: 0.25em;
+}
+
+.timer__button {
+  background-color: var(--color-base);
+  border-radius: 999em;
+  color: var(--color-primary);
+  font-size: 0.875rem;
+  padding: 0.5em 1.5em;
+  text-transform: lowercase;
+}

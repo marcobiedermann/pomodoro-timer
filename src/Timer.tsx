@@ -44,20 +44,24 @@ function Timer(props: TimerProps): JSX.Element {
     isRunning ? delay : null,
   );
 
-  const output = dayjs.duration(dayjs(endAt).diff(dayjs(currentTime))).format('HH:mm:ss');
+  const output = dayjs.duration(dayjs(endAt).diff(dayjs(currentTime))).format('mm:ss');
 
   return (
-    <>
+    <div className="timer">
       <Helmet>
         <title>{output}</title>
       </Helmet>
-      <output>{output}</output>
+      <output className="timer__output">{output}</output>
       {isRunning ? (
-        <button onClick={onStopClick}>Stop</button>
+        <button className="timer__button" onClick={onStopClick}>
+          Stop
+        </button>
       ) : (
-        <button onClick={onStartClick}>Start</button>
+        <button className="timer__button" onClick={onStartClick}>
+          Start
+        </button>
       )}
-    </>
+    </div>
   );
 }
 
