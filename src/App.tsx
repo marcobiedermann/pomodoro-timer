@@ -1,7 +1,7 @@
-import { useParams } from "react-router-dom";
-import { z } from "zod";
-import Timer from "./Timer";
-import dayjs from "./dayjs";
+import { useParams } from 'react-router-dom';
+import { z } from 'zod';
+import Timer from './Timer';
+import dayjs from './dayjs';
 
 const paramsSchema = z.object({
   minutes: z.coerce
