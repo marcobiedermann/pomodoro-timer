@@ -44,7 +44,9 @@ function Timer(props: TimerProps): JSX.Element {
     isRunning ? delay : null,
   );
 
-  const output = dayjs.duration(dayjs(endAt).diff(dayjs(currentTime))).format('mm:ss');
+  const diffDuration = dayjs.duration(dayjs(endAt).diff(dayjs(currentTime)))
+  const format = diffDuration.hours() ? 'HH:mm:ss' :'mm:ss'
+  const output = diffDuration.format(format);
 
   return (
     <div className="timer">
